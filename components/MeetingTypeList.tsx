@@ -11,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const MeetingTypeList = () => {
     const router = useRouter();
-    const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>();
+    const [meetingState, setMeetingState] = useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>(undefined);
     const {user} = useUser();
     const client = useStreamVideoClient();
     const [values, setValues] = useState({
@@ -44,8 +44,8 @@ const MeetingTypeList = () => {
                     starts_at: startsAt,
                     custom: {
                         description
-                    }
-                }
+                    },
+                },
             });
             setCallDetails(call);
 
